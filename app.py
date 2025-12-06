@@ -20,7 +20,7 @@ def dbs():
 @app.route("/dbs_prediction",methods=["GET","POST"])
 def dbs_prediction():
     q = float(request.form.get("q"))
-    model = joblib.load('dbs.pkl')
+    model = joblib.load("dbs.pkl")
     r = model.predict([[q]])    
     return(render_template("dbs_prediction.html",r=r[0][0]))
 
